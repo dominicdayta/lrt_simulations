@@ -68,7 +68,7 @@ h<-hist(as.numeric(subset(entry,END_HOUR==paste(arrival_time),select=paste(stati
   cdf<-cbind(h$breaks[2:NROW(h$breaks)],cumdensity)
 ```
 
-The reason why a cumulative density had to be constructed was because I use this to do inverse sampling on the from a Uniform(0,1) distribution on lines 127 to 134, such that I am not simply taking the actual observed passenger traffic on that hour and station, but taking a random sample from a distribution constructed out of that data:
+The reason why a cumulative density had to be constructed was because I use this to do inverse sampling from a Uniform(0,1) distribution on lines 127 to 134, such that I am not simply taking the actual observed passenger traffic on that hour and station, but taking a random sample from a distribution constructed out of that data:
 
 ```r
 sampled<-runif(1,0,1)
